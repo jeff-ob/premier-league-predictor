@@ -1,6 +1,5 @@
 # ── Données brutes lourdes (non versionnées) ─────────────────────────────────
 data/raw/england-master/.github/
-data/raw/pl_all_seasons.csv
 data/external/cache/
 data/external/failed_parses/
 
