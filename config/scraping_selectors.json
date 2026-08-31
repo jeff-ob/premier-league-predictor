@@ -1,0 +1,28 @@
+{
+  "fbref": {
+    "xg_table": {
+      "primary": "table.stats_table tbody tr",
+      "fallback": "div.table_container table tr",
+      "generic": "table tr"
+    },
+    "xg_columns": {
+      "date": "td[data-stat='date']",
+      "home_team": "td[data-stat='home_team']",
+      "away_team": "td[data-stat='away_team']",
+      "home_xg": "td[data-stat='home_xg']",
+      "away_xg": "td[data-stat='away_xg']"
+    },
+    "last_verified": "2025-01-15"
+  },
+  "transfermarkt": {
+    "squad_value": {
+      "primary": "table.items tbody tr td:nth-child(6)",
+      "fallback": "div.responsive-table td.rechts.hauptlink"
+    },
+    "team_name": {
+      "primary": "table.items tbody tr td:nth-child(2) a",
+      "fallback": "div.responsive-table td.hauptlink a"
+    },
+    "last_verified": "2025-01-15"
+  }
+}

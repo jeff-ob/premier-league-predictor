@@ -1,0 +1,12 @@
+=== Data Validation Report ===
+
+Source: transfermarkt
+Warnings: 5
+Errors: 0
+
+--- Warnings ---
+  - Invalid Squad_Value: 9.31 M€ for Everton FC in 2425
+  - Invalid Squad_Value: 7.72 M€ for Ipswich Town in 2425
+  - Invalid Squad_Value: 6.33 M€ for Leicester in 2425
+  - Invalid Squad_Value: 7.38 M€ for Southampton FC in 2425
+  - Invalid Squad_Value: 9.84 M€ for Wolves in 2425

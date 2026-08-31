@@ -1,0 +1,84 @@
+{
+  "model_name": "Random Forest v3 Optimisé",
+  "model_type": "RandomForestClassifier",
+  "version": "v3_optimized",
+  "dataset": "pl_features_v4.csv (avec xG avancées)",
+  "date_trained": "20260825_170628",
+  "hyperparameters": {
+    "max_depth": 7,
+    "max_features": "sqrt",
+    "min_samples_leaf": 10,
+    "min_samples_split": 200,
+    "n_estimators": 100
+  },
+  "n_features": 33,
+  "feature_names": [
+    "Home_Form",
+    "Home_Rank",
+    "Home_Streak",
+    "Home_Goal_Diff",
+    "Home_Rolling_GF",
+    "Home_Rolling_GA",
+    "Home_Points_Pace",
+    "Home_Match_Number",
+    "Away_Form",
+    "Away_Rank",
+    "Away_Streak",
+    "Away_Goal_Diff",
+    "Away_Rolling_GF",
+    "Away_Rolling_GA",
+    "Away_Points_Pace",
+    "Away_Match_Number",
+    "Home_Squad_Value",
+    "Home_Squad_Value_Mean",
+    "Home_Squad_Size",
+    "Away_Squad_Value",
+    "Away_Squad_Value_Mean",
+    "Away_Squad_Size",
+    "Squad_Value_Delta",
+    "Home_npxG",
+    "Away_npxG",
+    "Home_xPoints",
+    "Away_xPoints",
+    "Home_PPDA",
+    "Away_PPDA",
+    "Home_Deep",
+    "Away_Deep",
+    "Home_xG_Form",
+    "Away_xG_Form"
+  ],
+  "n_train": 1752,
+  "n_test": 438,
+  "metrics": {
+    "accuracy": 0.5776255707762558,
+    "f1_macro": 0.5560741780243826,
+    "f1_weighted": 0.5792324805270946,
+    "log_loss": 0.9426447490034251,
+    "cv_score_train": 0.6248097412480974
+  },
+  "metrics_per_class": {
+    "Away": {
+      "precision": 0.6136363636363636,
+      "recall": 0.5912408759124088,
+      "f1_score": 0.6022304832713755,
+      "support": 137
+    },
+    "Draw": {
+      "precision": 0.371900826446281,
+      "recall": 0.391304347826087,
+      "f1_score": 0.3813559322033898,
+      "support": 115
+    },
+    "Home": {
+      "precision": 0.6864864864864865,
+      "recall": 0.6827956989247311,
+      "f1_score": 0.6846361185983828,
+      "support": 186
+    }
+  },
+  "improvements": {
+    "vs_baseline": 15.262557077625576,
+    "vs_rf_default": 2.9680365296803735,
+    "vs_gb_optimized": -0.9374429223744207
+  }
+}

@@ -1,0 +1,9 @@
+[server]
+enableStaticServing = true
+
+[client]
+showErrorDetails = true
+
+[runner]
+# Autoriser unsafe_allow_html dans st.markdown
+magicEnabled = true

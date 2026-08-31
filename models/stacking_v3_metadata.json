@@ -1,0 +1,136 @@
+{
+  "model_name": "Ensemble Stacking v3",
+  "model_type": "Stacking (GB + RF + LR)",
+  "version": "v3_stacking",
+  "dataset": "pl_features_v4.csv (sans features SOS)",
+  "date_trained": "20260825_183633",
+  "architecture": {
+    "base_models": [
+      "GradientBoosting",
+      "RandomForest",
+      "LogisticRegression"
+    ],
+    "meta_model": "LogisticRegression",
+    "meta_features": "9 colonnes (3 modèles × 3 classes)"
+  },
+  "base_models_params": {
+    "gb": {
+      "ccp_alpha": 0.0,
+      "criterion": "deprecated",
+      "init": null,
+      "learning_rate": 0.05,
+      "loss": "log_loss",
+      "max_depth": 7,
+      "max_features": null,
+      "max_leaf_nodes": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 100,
+      "min_weight_fraction_leaf": 0.0,
+      "n_estimators": 50,
+      "n_iter_no_change": null,
+      "random_state": 42,
+      "subsample": 1.0,
+      "tol": 0.0001,
+      "validation_fraction": 0.1,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "rf": {
+      "bootstrap": true,
+      "ccp_alpha": 0.0,
+      "class_weight": "balanced",
+      "criterion": "gini",
+      "max_depth": 7,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "max_samples": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 10,
+      "min_samples_split": 200,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "n_estimators": 100,
+      "n_jobs": -1,
+      "oob_score": false,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "lr": {
+      "max_iter": 1000,
+      "class_weight": "balanced"
+    }
+  },
+  "n_features": 33,
+  "feature_names": [
+    "Home_Form",
+    "Home_Rank",
+    "Home_Streak",
+    "Home_Goal_Diff",
+    "Home_Rolling_GF",
+    "Home_Rolling_GA",
+    "Home_Points_Pace",
+    "Home_Match_Number",
+    "Away_Form",
+    "Away_Rank",
+    "Away_Streak",
+    "Away_Goal_Diff",
+    "Away_Rolling_GF",
+    "Away_Rolling_GA",
+    "Away_Points_Pace",
+    "Away_Match_Number",
+    "Home_Squad_Value",
+    "Home_Squad_Value_Mean",
+    "Home_Squad_Size",
+    "Away_Squad_Value",
+    "Away_Squad_Value_Mean",
+    "Away_Squad_Size",
+    "Squad_Value_Delta",
+    "Home_npxG",
+    "Away_npxG",
+    "Home_xPoints",
+    "Away_xPoints",
+    "Home_PPDA",
+    "Away_PPDA",
+    "Home_Deep",
+    "Away_Deep",
+    "Home_xG_Form",
+    "Away_xG_Form"
+  ],
+  "n_train": 1752,
+  "n_test": 438,
+  "metrics": {
+    "accuracy": 0.593607305936073,
+    "f1_macro": 0.4748532871014741,
+    "f1_weighted": 0.5227379487366463,
+    "log_loss": 0.8979636169264946
+  },
+  "metrics_per_class": {
+    "Away": {
+      "precision": 0.5857988165680473,
+      "recall": 0.7226277372262774,
+      "f1_score": 0.6470588235294118,
+      "support": 137
+    },
+    "Draw": {
+      "precision": 0.23529411764705882,
+      "recall": 0.034782608695652174,
+      "f1_score": 0.06060606060606061,
+      "support": 115
+    },
+    "Home": {
+      "precision": 0.623015873015873,
+      "recall": 0.8440860215053764,
+      "f1_score": 0.7168949771689498,
+      "support": 186
+    }
+  },
+  "improvements": {
+    "vs_baseline": 16.860730593607304,
+    "vs_gb_v3_optimized": 0.660730593607306,
+    "vs_rf_v3_optimized": 1.5607305936073068,
+    "vs_lr_v3": 2.0607305936073073
+  },
+  "notes": "Meilleur modèle du projet. Combine les forces de GB, RF et LR."
+}

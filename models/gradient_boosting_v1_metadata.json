@@ -1,0 +1,28 @@
+{
+  "model_type": "GradientBoostingClassifier",
+  "dataset": "pl_features_v1.csv",
+  "n_features": 16,
+  "features": [
+    "Home_Form",
+    "Home_Rank",
+    "Home_Streak",
+    "Home_Goal_Diff",
+    "Home_Rolling_GF",
+    "Home_Rolling_GA",
+    "Home_Points_Pace",
+    "Home_Match_Number",
+    "Away_Form",
+    "Away_Rank",
+    "Away_Streak",
+    "Away_Goal_Diff",
+    "Away_Rolling_GF",
+    "Away_Rolling_GA",
+    "Away_Points_Pace",
+    "Away_Match_Number"
+  ],
+  "n_train": 9823,
+  "n_test": 2456,
+  "accuracy_test": 0.4995928338762215,
+  "f1_macro_test": 0.39690714478527545,
+  "date_trained": "2026-08-17 22:17:26"
+}

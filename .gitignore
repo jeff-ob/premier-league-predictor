@@ -1,0 +1,33 @@
+# ── Données brutes lourdes (non versionnées) ─────────────────────────────────
+data/raw/england-master/.github/
+data/raw/pl_all_seasons.csv
+data/external/cache/
+data/external/failed_parses/
+
+# ── Données intermédiaires et traitées ───────────────────────────────────────
+data/interim/
+data/processed/
+
+# ── Secrets ──────────────────────────────────────────────────────────────────
+config/*.env
+.env
+*.env
+
+# ── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.ipynb_checkpoints/
+
+# ── OS ───────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── IDE ──────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+
+# ── Tests ────────────────────────────────────────────────────────────────────
+.pytest_cache/
+htmlcov/
+.coverage

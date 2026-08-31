@@ -1,0 +1,16 @@
+services:
+  notebook:
+    build: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/workspace
+    command: jupyter lab --ip=0.0.0.0 --allow-root --no-browser
+
+  app:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/workspace
+    command: streamlit run app/app.py --server.address=0.0.0.0

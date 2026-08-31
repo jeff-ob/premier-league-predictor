@@ -1,0 +1,178 @@
+/* Design System v2 — Dark mode unifié */
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root {
+    /* Fond & structure */
+    --bg-main:      #0B0E14;
+    --bg-panel:     #12182A;
+    --border-dim:   rgba(139,146,168,0.15);
+
+    /* Texte */
+    --c-text:       #E8E8E8;
+    --c-dim:        #9BA4C0;
+    --c-ink:        #0B0E14;
+
+    /* Marque / UI */
+    --c-brand:      #2FD9E0;
+
+    /* Statuts */
+    --c-success:    #00C46A;
+    --c-warning:    #FFB100;
+    --c-danger:     #FF3B5C;
+
+    /* Typographie */
+    --font-display: 'Big Shoulders Display', sans-serif;
+    --font-body:    'IBM Plex Sans', sans-serif;
+    --font-data:    'IBM Plex Mono', monospace;
+}
+
+/* ── Global ──────────────────────────────────────────────────────────────── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+.stApp {
+    background-color: var(--bg-main) !important;
+    color: var(--c-text) !important;
+    font-family: var(--font-body) !important;
+}
+
+#MainMenu, footer { visibility: hidden; }
+
+/* ── Sidebar ─────────────────────────────────────────────────────────────── */
+[data-testid="stSidebar"] {
+    background-color: var(--bg-panel) !important;
+    border-right: 1px solid var(--border-dim) !important;
+}
+
+/* ── Champion Banner ─────────────────────────────────────────────────────── */
+.champion-banner {
+    background: linear-gradient(135deg, var(--bg-panel) 0%, #1A2340 100%);
+    border: 2px solid var(--c-success);
+    border-radius: 8px;
+    padding: 2.5rem 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.champion-banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0,196,106,0.08), transparent);
+    animation: scan 4s infinite;
+}
+
+@keyframes scan {
+    0%   { left: -100%; }
+    100% { left:  100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .champion-banner::before { animation: none; }
+}
+
+/* ── Panel ───────────────────────────────────────────────────────────────── */
+.panel {
+    background-color: var(--bg-panel);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-dim);
+}
+
+.panel-header {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--c-brand);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+}
+
+/* ── Standings Table ─────────────────────────────────────────────────────── */
+.standings-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-data);
+    font-size: 0.9rem;
+    background: var(--bg-panel);
+    color: var(--c-text);
+}
+
+.standings-table thead {
+    background-color: rgba(47,217,224,0.05);
+    border-bottom: 2px solid var(--c-brand);
+}
+
+.standings-table th {
+    padding: 0.65rem 0.8rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--c-dim);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+.standings-table td {
+    padding: 0.65rem 0.8rem;
+    border-bottom: 1px solid var(--border-dim);
+    color: var(--c-text);
+}
+
+.standings-table tbody tr:hover {
+    background-color: rgba(47,217,224,0.03);
+}
+
+/* ── Zone Indicators ─────────────────────────────────────────────────────── */
+.zone-indicator {
+    display: inline-block;
+    width: 8px; height: 8px;
+    border-radius: 2px;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+.zone-ldc        { background-color: var(--c-success); }
+.zone-europa     { background-color: var(--c-warning); }
+.zone-relegation { background-color: var(--c-danger); }
+
+/* ── Stat Cards ──────────────────────────────────────────────────────────── */
+.stat-card {
+    background-color: var(--bg-panel);
+    border: 1px solid var(--border-dim);
+    border-radius: 8px;
+    padding: 1.2rem;
+    text-align: center;
+}
+
+.stat-label {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    color: var(--c-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.4rem;
+}
+
+.stat-value {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--c-brand);
+}
+
+.stat-detail {
+    font-family: var(--font-data);
+    font-size: 0.78rem;
+    color: var(--c-dim);
+    margin-top: 0.2rem;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .panel { padding: 1rem; }
+}

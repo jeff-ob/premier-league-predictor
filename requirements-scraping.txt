@@ -1,0 +1,21 @@
+# Web Scraping Module Dependencies
+# This file contains the minimal dependencies needed to run the FBref and Transfermarkt scrapers
+# For the full project dependencies, see requirements.txt
+
+# HTTP Requests
+requests>=2.31.0
+
+# HTML Parsing
+beautifulsoup4>=4.12.0
+lxml>=4.9.0
+
+# Data Processing
+pandas>=2.0.0
+
+# Testing (optional, for development)
+pytest>=7.4.0
+pytest-cov>=4.1.0
+hypothesis>=6.82.0
+
+# Installation Instructions:
+# pip install -r requirements-scraping.txt

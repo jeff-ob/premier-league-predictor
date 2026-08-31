@@ -1,0 +1,52 @@
+{
+  "project": "Premier League - Prédiction Résultats",
+  "dataset": "pl_features_v4.csv (2,190 matchs avec xG, sans SOS)",
+  "date_saved": "20260825_183633",
+  "best_model": {
+    "name": "Ensemble Stacking v3",
+    "files": [
+      "stacking_gb_base.pkl",
+      "stacking_rf_base.pkl",
+      "stacking_lr_base.pkl",
+      "stacking_scaler.pkl",
+      "stacking_meta_model.pkl"
+    ],
+    "metadata": "stacking_v3_metadata.json",
+    "accuracy": 0.593607305936073,
+    "f1_macro": 0.4748532871014741,
+    "description": "Meilleur modèle - Combine GB, RF et LR via stacking"
+  },
+  "all_models": {
+    "champion": {
+      "name": "Ensemble Stacking v3",
+      "accuracy": 0.593607305936073,
+      "gain_vs_baseline": 16.860730593607304
+    },
+    "runner_up_1": {
+      "name": "Gradient Boosting v3 optimisé",
+      "accuracy": 0.587,
+      "gain_vs_baseline": 16.2
+    },
+    "runner_up_2": {
+      "name": "Random Forest v3 optimisé",
+      "accuracy": 0.578,
+      "gain_vs_baseline": 15.3
+    },
+    "runner_up_3": {
+      "name": "Logistic Regression v3",
+      "accuracy": 0.573,
+      "gain_vs_baseline": 14.8
+    }
+  },
+  "baseline": {
+    "strategy": "Toujours prédire Home",
+    "accuracy": 0.425
+  },
+  "failed_experiments": {
+    "sos_features": {
+      "description": "Strength of Schedule (TSI + SOS_Next5)",
+      "result": "Échec - Dégradation des performances",
+      "lesson": "Difficulté du calendrier non prédictive pour résultats individuels"
+    }
+  }
+}
